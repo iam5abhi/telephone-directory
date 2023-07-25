@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import Carousel from '../../components/carousel/Carousel';
 
 const Contacts = () => {
     const router = useRouter();
@@ -55,72 +56,17 @@ const Contacts = () => {
     }, [id])
     return (
         <>
-            <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"
-                />
-                <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-                <script src="https://cdn.tailwindcss.com"></script>
-                <link
-                    rel="stylesheet"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-                    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-                    crossorigin="anonymous"
-                    referrerpolicy="no-referrer"
-                />
-            </Head>
             <div className="">
-                <div className="container">
+                <div className="">
                     <div className="bg-white">
                         {/* Order Summary  */}
                         <div>
-                            <h3 className="text-xl mt-4 font-bold">Category : {category}</h3>
                             {/*     BOX     */}
+                            < Carousel />
                             {contactData.length == 0 ? <div className='text-center text-lg '>No Record  Found.....</div>
                                 : contactData.map((data,index) => {
                                     return <>
-                                        {/* <div id="controls-carousel" className="relative w-full" data-carousel="static">
-                                           
-                                            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-                                                
-                                                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                                    <img src="/docs/images/carousel/carousel-1.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                                                </div>
-                                                
-                                                <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                                    <img src="/docs/images/carousel/carousel-2.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                                                </div>
-                                               
-                                                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                                    <img src="/docs/images/carousel/carousel-3.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                                                </div>
-                                               
-                                                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                                    <img src="/docs/images/carousel/carousel-4.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                                                </div>
-                                                
-                                                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                                    <img src="/docs/images/carousel/carousel-5.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                                                </div>
-                                            </div>
-                                            <button type="button" className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                                    <svg className="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 1 1 5l4 4" />
-                                                    </svg>
-                                                    <span className="sr-only">Previous</span>
-                                                </span>
-                                            </button>
-                                            <button type="button" className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                                                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                                    <svg className="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m1 9 4-4-4-4" />
-                                                    </svg>
-                                                    <span className="sr-only">Next</span>
-                                                </span>
-                                            </button>
-                                        </div> */}
+                                        <h3 className="text-xl mt-4 font-bold">Category : {category}</h3>
                                         <div key={index+1} className="max-w-screen mx-auto">
                                             <div className="container mx-auto py-10">
                                                 <div className="p-4">
@@ -149,8 +95,10 @@ const Contacts = () => {
                                                 </div>
                                             </div>
                                         </div>
+
                                     </>
                                 })}
+                            < Carousel />
                         </div>
                     </div>
                 </div>
