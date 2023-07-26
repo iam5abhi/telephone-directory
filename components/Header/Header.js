@@ -31,6 +31,9 @@ const Header = () => {
                                 <Link href="/admin/contacts" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-violet-950 md:p-0  ">Add Contact</Link>
                             </li>
                             <li>
+                                <Link href="/admin/property" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-violet-950 md:p-0  ">Add Property</Link>
+                            </li>
+                            <li>
                                 <Link href="/admin/change-password" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-violet-950 md:p-0  ">Change Password</Link>
                             </li> 
                         </ul>

@@ -5,7 +5,7 @@ const xata = getXataClient();
 
 const handler = async (req, res) => {
 
-  const { specialization, category, Name, alternatePhoneNumber, phoneNumber, email } = req.body;
+  const { specialization, category, Name, alternatePhoneNumber, phoneNumber, email, Link } = req.body;
   await xata.db.contacts.create({
     specialization,
     category,
@@ -13,6 +13,7 @@ const handler = async (req, res) => {
     alternatePhoneNumber,
     phoneNumber,
     email,
+    Link
   });
   res.end();
 };
