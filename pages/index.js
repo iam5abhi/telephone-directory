@@ -26,11 +26,12 @@ export default function Index() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div className="max-w-screen mx-auto ">
-        <div className="container mx-auto py-10">
+        <div className="container mx-auto py-5">
           <div className="p-4 ">
             <div className=" rounded   mb-4 ">
-              <div className="grid gap-6 mb-6 grid-cols-2 md:grid-cols-3">
-                <div>
+              <div className="grid gap-6 mb-6 grid-cols-1 md:grid-cols-3">
+                {!category ? null : category.map((data) => {
+                  return <>
                   <Link href={`/properties`} ><div><div className="grid2">
                       <div className="max-w-sm rounded-full bg-gradient-to-r from-[#4216AA] to-[#F8AF0B] hover:bg-gradient-to-l shadow-md">
                         <div className="p-5">
@@ -39,9 +40,7 @@ export default function Index() {
                       </div>
                     </div></div>
                   </Link>
-                </div>
-                {!category ? null : category.map((data) => {
-                  return <Link key={data.id} href={`/contacts/${data.id}`} ><div><div className="grid2">
+                  <Link key={data.id} href={`/contacts/${data.id}`} ><div><div className="grid2">
                   <div className="max-w-sm rounded-full bg-gradient-to-r from-[#4216AA] to-[#F8AF0B] hover:bg-gradient-to-l shadow-md">
                     <div className="p-5">
                       <a href="#">
@@ -50,6 +49,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div></div></Link>
+                </>
                 })}
                 <div>
                 </div>
