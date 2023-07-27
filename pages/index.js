@@ -30,9 +30,8 @@ export default function Index() {
           <div className="p-4 ">
             <div className=" rounded   mb-4 ">
               <div className="grid gap-6 mb-6 grid-cols-1 md:grid-cols-3">
-                {!category ? null : category.map((data) => {
-                  return <>
-                  <Link href={`/properties`} ><div><div className="grid2">
+              {category.length==0 ? null :<>
+                 <Link href={`/properties`} ><div><div className="grid2">
                       <div className="max-w-sm rounded-full bg-gradient-to-r from-[#4216AA] to-[#F8AF0B] hover:bg-gradient-to-l shadow-md">
                         <div className="p-5">
                             <h5 className="text-center  text-white text-xl md:text-3xl font-semibold tracking-tight uppercase">properties</h5>
@@ -40,6 +39,8 @@ export default function Index() {
                       </div>
                     </div></div>
                   </Link>
+                 {category.map((data) => {
+                  return <>
                   <Link key={data.id} href={`/contacts/${data.id}`} ><div><div className="grid2">
                   <div className="max-w-sm rounded-full bg-gradient-to-r from-[#4216AA] to-[#F8AF0B] hover:bg-gradient-to-l shadow-md">
                     <div className="p-5">
@@ -51,6 +52,8 @@ export default function Index() {
                 </div></div></Link>
                 </>
                 })}
+                </>
+                }
                 <div>
                 </div>
               </div>
