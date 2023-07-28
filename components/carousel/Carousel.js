@@ -5,7 +5,6 @@ const Carousel = () => {
     const carouselItems = [
         { id: 1, imageUrl: '/Images/carousel.jpg' },
         { id: 2, imageUrl: '/Images/telephone_directory.jpg' },
-        { id: 3, imageUrl: '/Images/carousel.jpg' },
         // Add more carousel items as needed
     ];
 
