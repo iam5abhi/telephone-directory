@@ -20,9 +20,10 @@ const index = () => {
                 <div className="max-w-screen mx-auto">
                     <div className="container mx-auto py-6">
                         <div className="px-4">
+                        <h2 className='text-2xl font-bold text-center py-8 md:text-4xl md:py-16'>Do you want to:  </h2>
                             <div className="rounded mb-4 ml-0 md:ml-[200px]">
+                          
                                 <div className="grid gap-2 md:gap-0  grid-cols-2 md:grid-cols-2">
-                                   
                                     <div className="grid1">
                                         <div className="max-w-sm rounded-full bg-[#F8AF0B] shadow-md">
                                             <div className="md:p-5 p-3">
