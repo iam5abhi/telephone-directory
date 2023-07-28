@@ -22,6 +22,7 @@ const index = () => {
                         <div className="px-4">
                             <div className="rounded mb-4 ml-0 md:ml-[200px]">
                                 <div className="grid gap-2 md:gap-0  grid-cols-2 md:grid-cols-2">
+                                   
                                     <div className="grid1">
                                         <div className="max-w-sm rounded-full bg-[#F8AF0B] shadow-md">
                                             <div className="md:p-5 p-3">

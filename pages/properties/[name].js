@@ -11,10 +11,11 @@ const viewPropert = () => {
 
     const getCategotyData = () => {
         fetch("/api/property/get-property", {
-            method: "GET",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
+        body: JSON.stringify({requirement:requirement.name }),
         }).then((res) => { return res.json() }
         ).then((res) => setContact(res))
     }
