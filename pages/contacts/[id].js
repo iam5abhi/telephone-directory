@@ -104,18 +104,21 @@ const Contacts = () => {
                                                         <div className="grid gap-6 mb-6 grid-cols-1 md:grid-cols-1">
                                                             <div className="grid1">
                                                                 <div className="relative w-full md:w-[60%] bg-gradient-to-r from-[#4216AA] to-[#F8AF0B] hover:bg-gradient-to-l  md:mx-auto border rounded-lg shadow-md">
-                                                                    <div className="md:p-5 p-2"><div className="grid grid-cols-4 gap-3 md:gap-6">
+                                                                    <div className="md:p-5 p-2">
+                                                                        <div className="grid grid-cols-5 gap-3 md:gap-6">
                                                                         <div className="col-span-2"><a href="#">
                                                                             <h5 className="text-center text-sm md:text-2xl text-white  font-bold tracking-tight uppercase mb-2">{data.Name}</h5>
                                                                             <p className="text-center text-xs md:text-xl text-white md:text-lg font-medium tracking-tight">{data.specialization}</p></a></div>
-                                                                        <div className="pt-0 md:pt-4 ml-0 md:ml-5"><div className="grid grid-cols-2 gap-4 mt-2 md:mt-0 md:gap-12">
+                                                                        <div className="col-span-2 pt-0 md:pt-4 ml-0 md:ml-5">
+                                                                            <div className="grid grid-cols-2 gap-4 mt-2 md:mt-0 md:gap-12">
                                                                             <a href={`tel:${data.phoneNumber}`}><img src="/Images/1.png" className="w-6 md:w-10" /></a>
                                                                             {data.alternatePhoneNumber?
                                                                             <a href={`tel:${data.alternatePhoneNumber}`}><img src="/Images/2.png" className="w-6 md:w-10" /></a>
                                                                             :null}
-                                                                            </div></div><div className="pt-0 md:pt-4">
+                                                                            </div></div>
+                                                                            <div className="md:pl-12 md:pt-4 pt-2">
                                                                             <a href={`mailto:${data.email}`} className="text-center text-white text-2xl md:text-xl font-medium tracking-tight">
-                                                                                <i className="fa-solid fa-envelope text-sm md:text-4xl text-center" /></a></div>
+                                                                            <img src="/Images/email.png" className="w-6 md:w-10" /></a></div>
                                                                     </div>
                                                                     </div>
                                                                     <div className="absolute top-0 -m-4 right-12 block rounded-2xl bg-[red] text-[white] font-bold px-4 py-1 text-xs md:text-sm shadow-lg">Report
