@@ -97,7 +97,7 @@ const UpdateContact = () => {
                 className="bg-white shadow-xl py-14 rounded-lg p-5"
               >
                 <h1 className="font-bold text-3xl mb-8 text-center">
-                  Contact Add
+                  Contact Update
                 </h1>
                 <input type="hidden" name="remember" defaultValue="true" />
                 <div className="mt-8 space-y-4 ">
@@ -113,6 +113,7 @@ const UpdateContact = () => {
                       name="category"
                       onChange={onChangeHandler}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      value={formData.category}
                       required
                     >
                       <option value="">Choose</option>
@@ -129,27 +130,27 @@ const UpdateContact = () => {
                   </div>
                   <div className="mb-4">
                     <label htmlfor="name" className="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
-                    <input type="text" id="name" name='Name' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Name" required />
+                    <input type="text" id="name" value={formData.Name} name='Name' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Name" required />
                   </div>
                   <div className="mb-4">
                     <label htmlfor="phone" className="block mb-2 text-sm font-medium text-gray-900 ">Phone</label>
-                    <input type="text" id="number" name="phoneNumber" onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Phone" required />
+                    <input type="text" id="number" value={formData.phoneNumber} name="phoneNumber" onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Phone" required />
                   </div>
                   <div className="mb-4">
                     <label htmlfor="phone" className="block mb-2 text-sm font-medium text-gray-900 ">Alternate Phone</label>
-                    <input type="text" id="number" name='alternatePhoneNumber' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Alternate Phone" />
+                    <input type="text" id="number" value={formData.alternatePhoneNumber} name='alternatePhoneNumber' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Alternate Phone" />
                   </div>
                   <div className="mb-4">
                     <label htmlfor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
-                    <input type="email" id="email"  name='email' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Email" required />
+                    <input type="email" id="email" value={formData.email} name='email' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Email" required />
                   </div>
                   <div className="mb-4">
                     <label htmlfor="specialization" className="block mb-2 text-sm font-medium text-gray-900 ">Specialization</label>
-                    <input type="text" id="name" name='specialization' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Specialization" required />
+                    <input type="text" id="name" value={formData.specialization} name='specialization' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Specialization" required />
                   </div>
                   <div className="mb-4">
                     <label htmlfor="specialization" className="block mb-2 text-sm font-medium text-gray-900 ">Link</label>
-                    <input type="text" id="name" name='Link' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Link" required />
+                    <input type="text" id="name" value={formData.Link} name='Link' onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Link" required />
                   </div>
                   <div className="text-center mb-6">
                     <button

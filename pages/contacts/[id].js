@@ -110,7 +110,7 @@ const Contacts = () => {
                                                                             <p className="text-center text-xs md:text-xl text-white md:text-lg font-medium tracking-tight">{data.specialization}</p></a></div>
                                                                         <div className="pt-0 md:pt-4 ml-0 md:ml-5"><div className="grid grid-cols-2 gap-4 mt-2 md:mt-0 md:gap-12">
                                                                             <a href={`tel:${data.phoneNumber}`}><img src="/Images/1.png" className="w-6 md:w-10" /></a>
-                                                                            {data.alternatePhoneNumbe?
+                                                                            {data.alternatePhoneNumber?
                                                                             <a href={`tel:${data.alternatePhoneNumber}`}><img src="/Images/2.png" className="w-6 md:w-10" /></a>
                                                                             :null}
                                                                             </div></div><div className="pt-0 md:pt-4">

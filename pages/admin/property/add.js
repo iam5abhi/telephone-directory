@@ -76,10 +76,6 @@ const AddContact = () => {
                   <div className="mb-4 flex gap-5">
                     <div className="flex gap-1">
                         <input type="radio" id="name" name='requirement' value="buy" onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 " required />
-                        <label htmlfor="specialization" className="block text-sm font-medium text-gray-900 ">Buy</label>
-                    </div>
-                    <div className="flex gap-1">
-                        <input type="radio" id="name" name='requirement' value="sell" onChange={onChangeHandler} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 " required />
                         <label htmlfor="specialization" className="block text-sm font-medium text-gray-900 ">Sell</label>
                     </div>
                     <div className="flex gap-1">

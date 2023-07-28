@@ -14,7 +14,7 @@ const Add = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ category: category }),
-        }).then(() => router.push("/admin/categories"));
+        }).then(() => router.push("/admin"));
     }
     return (
         <>
