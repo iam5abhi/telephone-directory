@@ -6,9 +6,8 @@ import Link from 'next/link';
 const Index = () => {
     const router = useRouter();
     const [contact,setContact]=useState()
-
+    
     const deleteContacts = (data,status) => {
-        console.log(data,'---')
         fetch("/api/property/delete-property", {
           method: "POST",
           headers: {
@@ -20,6 +19,7 @@ const Index = () => {
             alert("delete Succfully")
         });
     };
+
     const getCategotyData = ()=>{
         fetch("/api/property/get-property", { 
             method: "GET",
@@ -29,8 +29,9 @@ const Index = () => {
           }).then((res) => {return res.json()}
           ).then((res) => setContact(res))
     }
+
     useEffect(() => {
-        getCategotyData()
+        getCategotyData();
     }, [])
     return (
         <>

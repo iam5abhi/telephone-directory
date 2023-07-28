@@ -2,9 +2,9 @@ import { getXataClient } from '../../../src/xata';
 const xata = getXataClient();
 
 const handler = async (req, res) => {
-
-  const results = await xata.db.whatsappNumber.getAll();
-  res.send(results[0].Phonenumber);
+  const { id } = req.body;
+  await xata.db.topBanner.delete(id);
+  res.send();
 };
 
 export default handler;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const Carousel = () => {
+const Carousel = ({banner}) => {
+  console.log(banner,"banner")
     const carouselItems = [
         { id: 1, imageUrl: '/Images/carousel.jpg' },
         { id: 2, imageUrl: '/Images/telephone_directory.jpg' },
@@ -26,10 +27,10 @@ const Carousel = () => {
   return (
     <div className="carousel overflow-hidden relative w-full">
       <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-        {carouselItems.map((item, index) => (
+        {!banner?null:banner.map((item, index) => (
           <div key={item.id} className={`w-full h-64 flex-shrink-0 ${index !== activeIndex && 'opacity-0'}`}>
             <img
-              src={item.imageUrl}
+              src={item.image}
               alt={`Slide ${item.id}`}
               className="w-full h-full object-cover object-center"
             />
@@ -37,7 +38,7 @@ const Carousel = () => {
         ))}
       </div>
       <div className="flex justify-center mt-2 absolute bottom-2 left-1/2 transform -translate-x-1/2">
-        {carouselItems.map((item, index) => (
+        {!banner?null:banner.map((item, index) => (
           <button
             key={item.id}
             onClick={() => setActiveIndex(index)}

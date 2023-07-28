@@ -8,15 +8,15 @@ const Index = () => {
     const [topBanner,setTopBanner]=useState()
     const [buttomBanner,setButtomBanner]=useState()
 
-    const deleteCategory = (id) => {
-        fetch("/api/delete-category", {
+    const topBannerCategory = (id) => {
+        fetch("/api/banner/delete-topBanner", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ id: id }),
         }).then(() => {
-            getCategotyData()
+          getTopBannerData()
             alert("delete Succfully")
         });
     };
@@ -39,7 +39,7 @@ const Index = () => {
             },
           }).then((res) => {return res.json()}
           ).then((res) => setTopBanner(res))
-    }
+    } 
 
     useEffect(() => {
         getTopBannerData()
@@ -54,7 +54,9 @@ const Index = () => {
         </div>
         <div className=" grid grid-cols-3 gap-2">
         {!topBanner?null:topBanner.map((data,index)=>{
-            return <Link key={index+1} href={data.Link} ><img src={data.image} /> </Link>
+            return <div key={index+1} ><img src={data.image} /> <span className="mt-2 rounded-full cursor-pointer flex w-[30%] mx-auto justify-center 
+            rounded-full bg-gradient-to-r from-[#4216AA] to-[#F8AF0B] hover:bg-gradient-to-l shadow-md py-1 px-2 text-lg 
+            font-medium text-white" onClick={()=>topBannerCategory(data.id)}>Delete</span> </div>
           })}
         </div>
     </div>

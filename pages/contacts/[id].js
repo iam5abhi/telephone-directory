@@ -8,6 +8,7 @@ const Contacts = () => {
     const { id } = router.query
     const [contactData, setContactData] = useState([]);
     const [category, setCategory] = useState();
+    const [banner, setBanner] = useState();
 
     const getContactData = () => {
         fetch("/api/public/get-contacts", {
@@ -50,23 +51,52 @@ const Contacts = () => {
             .catch((error) => { console.error("Error fetching or parsing data:", error) });
     };
 
+    const getBannerData = () => {
+        fetch("/api/banner/get-topBanner", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((res) => {return res.json(); })
+        .then((data) => { setBanner(data) })
+        .catch((error) => { console.error("Error fetching or parsing data:", error) });
+    };
+
+    
+
     useEffect(() => {
-        getCategotyData()
-        getContactData()
+        getCategotyData();
+        getContactData();
+        getBannerData();
     }, [id])
     return (
         <>
             <div className="">
                 <div className="">
                     <div className="bg-white">
-                        {/* Order Summary  */}
+                    <div className="max-w-screen mx-auto bg-[#4216aa]">
+                        <div className="container mx-auto py-4">
+                            <div className="px-4">
+                                <div className="cursor-pointer">
+                                    <img onClick={()=>router.push('/')} src="/images/back.png" className="w-6" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         <div>
                             {/*     BOX     */}
-                            < Carousel />
+                            < Carousel banner={banner}/>
                             {contactData.length == 0 ? <div className='text-center text-lg '>No Record  Found.....</div>
                                 : contactData.map((data,index) => {
                                     return <>
-                                        <h3 className="text-xl mt-4 font-bold">Category : {category}</h3>
+                                        <div className="grid2 mt-4">
+                                            <div className="max-w-sm mx-auto rounded-full bg-gradient-to-r from-[#4216AA] to-[#F8AF0B] hover:bg-gradient-to-l shadow-md">
+                                                <div className="p-5">
+                                                    <h5 className="text-center  text-white text-xl md:text-3xl font-semibold tracking-tight uppercase">{category}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div key={index+1} className="max-w-screen mx-auto">
                                             <div className="container mx-auto py-10">
                                                 <div className="p-4">
@@ -102,7 +132,6 @@ const Contacts = () => {
 
                                     </>
                                 })}
-                            < Carousel />
                         </div>
                     </div>
                 </div>

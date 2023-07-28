@@ -6,6 +6,8 @@ const viewPropert = () => {
     const requirement = router.query
     const [contact, setContact] = useState()
     const [checkValue,setCheckValue]=useState({commercial:false,residential:false})
+    const [whatsappNumber,setWhatsappNumber]=useState()
+    
 
     const getCategotyData = () => {
         fetch("/api/property/get-property", {
@@ -38,8 +40,19 @@ const viewPropert = () => {
             .catch((error) => { console.error("Error fetching or parsing data:", error) });
     };
 
+    const getWhatsappData = ()=>{
+        fetch("/api/whatsappNumber/whatsappNumber", { 
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }).then((res) => {return res.json()}
+          ).then((res) => setWhatsappNumber(res))
+    }
+
     useEffect(() => {
-        getCategotyData()
+        getCategotyData();
+        getWhatsappData();
     }, [])
     return (
         <>
@@ -49,7 +62,7 @@ const viewPropert = () => {
                     <div className="container mx-auto py-4">
                         <div className="px-4">
                             <div className="cursor-pointer">
-                                <img onClick={()=>router.push('/')} src="/Images/back.png" className="w-6" />
+                                <img onClick={()=>router.push('/')} src="/images/back.png" className="w-6" />
                             </div>
                         </div>
                     </div>
@@ -121,7 +134,7 @@ const viewPropert = () => {
                                                                 </a>
                                                             </div>
                                                             <div className="md:pl-16 pl-6 md:pt-0 pt-2">
-                                                                <a href="#">
+                                                                <a href={`https://web.whatsapp.com/send?phone=91${whatsappNumber}&text=ask_price%20:${data.ask_price}%3A%20%2Cname:${data.title}`}>
                                                                     <img src="/Images/whatsapp.png" className="w-8 md:w-14" />
                                                                 </a>
                                                             </div>
