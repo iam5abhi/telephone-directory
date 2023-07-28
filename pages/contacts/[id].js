@@ -79,7 +79,7 @@ const Contacts = () => {
                         <div className="container mx-auto py-4">
                             <div className="px-4">
                                 <div className="cursor-pointer">
-                                    <img onClick={()=>router.push('/')} src="/images/back.png" className="w-6" />
+                                    <img onClick={()=>router.push('/')} src="/Images/back.png" className="w-6" />
                                 </div>
                             </div>
                         </div>
