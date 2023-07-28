@@ -7,8 +7,21 @@ const Index = () => {
     const router = useRouter();
     const [contact,setContact]=useState()
     
-    const deleteContacts = (data,status) => {
+    const deleteContacts = (id) => {
         fetch("/api/property/delete-property", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: id }),
+        }).then(() => {
+            getCategotyData()
+            alert("delete Succfully")
+        });
+    }; 
+    
+    const statsContacts = (data,status) => {
+        fetch("/api/property/status-property", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -102,9 +115,13 @@ const Index = () => {
                                             <span aria-hidden className="absolute inset-0 bg-yellow-200 opacity-50 rounded-full" />
                                             <span className="relative">Update</span>
                                         </span>
-                                        <span onClick={()=>deleteContacts(data,data.status=='active'?'deactive':'active')} className={`relative inline-block px-3 py-1 font-semibold ${data.status=='active'?'text-green-800':'text-red-800'} leading-tight`}>
+                                        <span onClick={()=>statsContacts(data,data.status=='active'?'deactive':'active')} className={`relative inline-block px-3 py-1 font-semibold ${data.status=='active'?'text-green-800':'text-red-800'} leading-tight`}>
                                             <span aria-hidden className={`absolute inset-0 ${data.status=='active'?'bg-green-200':'bg-red-200'} opacity-50 rounded-full`} />
                                             <span className="relative">{data.status}</span>
+                                        </span>
+                                        <span onClick={()=>deleteContacts(data.id)} className={`ml-3 relative inline-block px-3 py-1 font-semibold text-red-800 leading-tight`}>
+                                            <span aria-hidden className={`absolute inset-0 bg-red-200 opacity-50 rounded-full`} />
+                                            <span className="relative">Delete</span>
                                         </span>
                                     </td>
                                 </tr>

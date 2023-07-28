@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 
 const Carousel = () => {
   const [banner, setBanner] = useState([]);
+    const carouselItems = [
+        { id: 1, imageUrl: '/Images/carousel.jpg' },
+        { id: 2, imageUrl: '/Images/telephone_directory.jpg' },
+        { id: 3, imageUrl: '/Images/carousel.jpg' },
+        // Add more carousel items as needed
+    ];
 
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Function to handle the automatic sliding
   const handleAutoSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % banner.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
   };
 
   // Start the auto slide on component mount
