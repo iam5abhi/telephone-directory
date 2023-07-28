@@ -1,14 +1,13 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import Carousel from '../../components/carousel/Carousel';
-
+import Carousel from '../../components/carousel/Carousel'
 const Contacts = () => {
     const router = useRouter();
     const { id } = router.query
     const [contactData, setContactData] = useState([]);
     const [category, setCategory] = useState();
-    const [banner, setBanner] = useState();
+
 
     const getContactData = () => {
         fetch("/api/public/get-contacts", {
@@ -51,24 +50,9 @@ const Contacts = () => {
             .catch((error) => { console.error("Error fetching or parsing data:", error) });
     };
 
-    const getBannerData = () => {
-        fetch("/api/banner/get-topBanner", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-        .then((res) => {return res.json(); })
-        .then((data) => { setBanner(data) })
-        .catch((error) => { console.error("Error fetching or parsing data:", error) });
-    };
-
-    
-
     useEffect(() => {
         getCategotyData();
         getContactData();
-        getBannerData();
     }, [id])
     return (
         <>
@@ -86,7 +70,7 @@ const Contacts = () => {
                     </div>
                         <div>
                             {/*     BOX     */}
-                            < Carousel banner={banner}/>
+                            < Carousel />
                             {contactData.length == 0 ? <div className='text-center text-lg '>No Record  Found.....</div>
                                 : contactData.map((data,index) => {
                                     return <>

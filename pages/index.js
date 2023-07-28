@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Carousel from "../components/carousel/Carousel";
 
 export default function Index() {
   const [category, setCategory] = useState([])
@@ -27,6 +28,7 @@ export default function Index() {
       </Head>
       <div className="max-w-screen mx-auto ">
         <div className="container mx-auto py-5">
+          <Carousel />
           <div className="p-4 ">
             <div className=" rounded   mb-4 ">
               <div className="grid gap-6 mb-6 grid-cols-1 md:grid-cols-3">

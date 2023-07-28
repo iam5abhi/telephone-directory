@@ -16,7 +16,7 @@ const Index = () => {
           },
           body: JSON.stringify({ id: id }),
         }).then(() => {
-          getTopBannerData()
+            getTopBannerData()
             alert("delete Succfully")
         });
     };

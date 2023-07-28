@@ -1,19 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-const Carousel = ({banner}) => {
-  console.log(banner,"banner")
-    const carouselItems = [
-        { id: 1, imageUrl: '/Images/carousel.jpg' },
-        { id: 2, imageUrl: '/Images/telephone_directory.jpg' },
-        { id: 3, imageUrl: '/Images/carousel.jpg' },
-        // Add more carousel items as needed
-    ];
+const Carousel = () => {
+  const [banner, setBanner] = useState([]);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Function to handle the automatic sliding
   const handleAutoSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % banner.length);
   };
 
   // Start the auto slide on component mount
@@ -23,6 +17,22 @@ const Carousel = ({banner}) => {
     // Clear the interval on component unmount to prevent memory leaks
     return () => clearInterval(interval);
   }, []);
+
+  const getBannerData = () => {
+    fetch("/api/banner/get-topBanner", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((res) => {return res.json(); })
+    .then((data) => { setBanner(data) })
+    .catch((error) => { console.error("Error fetching or parsing data:", error) });
+  };
+
+  useEffect(() => {
+      getBannerData();
+  }, [])
 
   return (
     <div className="carousel overflow-hidden relative w-full">
