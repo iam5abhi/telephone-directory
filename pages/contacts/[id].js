@@ -105,8 +105,8 @@ const Contacts = () => {
                                                                             <img src="/Images/email.png" className="w-6 md:w-10" /></a></div>
                                                                     </div>
                                                                     </div>
-                                                                    <div className="absolute top-0 -m-4 right-12 block rounded-2xl bg-[red] text-[white] font-bold px-4 py-1 text-xs md:text-sm shadow-lg">Report
-                                                                    </div>
+                                                                    {/* <div className="absolute top-0 -m-4 right-12 block rounded-2xl bg-[red] text-[white] font-bold px-4 py-1 text-xs md:text-sm shadow-lg">Report
+                                                                    </div> */}
                                                                 </div>
                                                             </div>
                                                             <div>

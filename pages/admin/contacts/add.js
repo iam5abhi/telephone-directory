@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import PrivateRoute from "../../../PrivateRoute/PrivateRoute";
 

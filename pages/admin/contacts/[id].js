@@ -32,7 +32,7 @@ const UpdateContact = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({...formData,id:id}),
     }).then(() => router.push("/admin/contacts"));
   };
 
